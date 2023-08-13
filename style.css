@@ -6,9 +6,11 @@
 }
 
 body {
-  /* background-image: url(./img/muzzarella.png); */
+  background-image: url(./img/muzzarella.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+
   display: flex;
   justify-content: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -39,6 +41,7 @@ body {
   align-items: center;
   gap: 5px;
 }
+
 #form label {
   font-size: 1.2em;
   font-weight: 600;
@@ -68,6 +71,8 @@ body {
 
 .foto {
   width: 40%;
+  background-position: center;
+
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -88,6 +93,7 @@ body {
 }
 
 .ingredientes {
+  font-size: 0.9em;
   font-style: italic;
 }
 
