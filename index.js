@@ -55,12 +55,15 @@ const body = document.querySelector("body");
 let pizzaOk;
 
 //Obtengo el id de la ultima pizza desde localStorage
-const ultima = localStorage.getItem("ultimaPizza");
-const idUltimaPizza = parseInt(ultima);
-const ultimaPizza = buscaPizza(idUltimaPizza);
-body.style.backgroundImage = "url(" + ultimaPizza.imagen + ")";
-// ultimaPizza.imagen;
-imprimePizza(ultimaPizza);
+const ultima = localStorage.getItem("ultimaPizza") || 0;
+if (ultima) {
+  const idUltimaPizza = parseInt(ultima);
+  const ultimaPizza = buscaPizza(idUltimaPizza);
+  console.log(idUltimaPizza);
+  body.style.backgroundImage = "url(" + ultimaPizza.imagen + ")";
+  // ultimaPizza.imagen;
+  imprimePizza(ultima);
+}
 
 function imprimePizza(cualPizza) {
   const { nombre, precio, ingredientes, imagen } = cualPizza;
