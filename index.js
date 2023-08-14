@@ -143,6 +143,7 @@ function leerForm(e) {
     //Error porque no ingresó nada:
     errorDisplay("Debe ingresar un número");
   }
+  inputTxt.value = "";
 }
 
 function errorDisplay(msg) {
