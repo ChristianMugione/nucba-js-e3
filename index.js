@@ -55,12 +55,10 @@ const body = document.querySelector("body");
 let pizzaOk;
 
 //Obtengo el id de la ultima pizza desde localStorage
-const ultima = localStorage.getItem("ultimaPizza") || 0;
+const ultima = JSON.parse(localStorage.getItem("ultimaPizza"));
+console.log(ultima);
 if (ultima) {
-  const idUltimaPizza = parseInt(ultima);
-  const ultimaPizza = buscaPizza(idUltimaPizza);
-  console.log(idUltimaPizza);
-  body.style.backgroundImage = "url(" + ultimaPizza.imagen + ")";
+  body.style.backgroundImage = "url('" + ultima.imagen + "')";
   // ultimaPizza.imagen;
   imprimePizza(ultima);
 }
@@ -138,7 +136,7 @@ function leerForm(e) {
     imprimePizza(pizzaOk);
 
     //Guardar pizza en localstorage reemplazando la anterior.
-    localStorage.setItem("ultimaPizza", pizzaOk.id);
+    localStorage.setItem("ultimaPizza", JSON.stringify(pizzaOk));
   } else if (ingresoAlgo) {
     //Lo que hago si no encontró pizza
     errorDisplay("El número de pizza ingresado no existe");
